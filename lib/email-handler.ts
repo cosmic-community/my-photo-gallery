@@ -162,5 +162,5 @@ export async function processEmailWithPhotos(
 export function extractEmailAddress(emailString: string): string {
   // Handle formats like "Name <email@domain.com>" or just "email@domain.com"
   const emailMatch = emailString.match(/<([^>]+)>/) || emailString.match(/([^\s]+@[^\s]+)/);
-  return emailMatch ? emailMatch[1] : emailString;
+  return emailMatch?.[1] ?? emailString;
 }
