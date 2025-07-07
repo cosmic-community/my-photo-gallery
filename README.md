@@ -13,7 +13,7 @@ A Next.js photo gallery application powered by Cosmic CMS with email-to-photo fu
 
 ## Email to Photo Feature
 
-Send photos directly to your gallery by emailing them to: `jeffhovingaphotos@gail.com`
+Send photos directly to your gallery by emailing them to: `jeffhovingaphotos@gmail.com`
 
 ### How it works:
 1. Send an email with photo attachments to the configured email address

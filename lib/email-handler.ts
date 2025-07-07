@@ -3,8 +3,8 @@ import { EmailAttachment, PhotoUploadResult } from '@/types';
 
 // Allowed email addresses that can upload photos
 const ALLOWED_EMAIL_ADDRESSES = [
-  'jeffhovingaphotos@gail.com',
-  'jeffhovingaphotos@gmail.com' // Also allow the existing gmail address
+  'jeffhovingaphotos@gmail.com', // Primary email address
+  'jeffhovingaphotos@gail.com'   // Also allow the previous email for backwards compatibility
 ];
 
 // Supported image types

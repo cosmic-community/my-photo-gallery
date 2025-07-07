@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     console.log(`Processing email from: ${fromEmail}`);
 
     // Check if email was sent to the correct address
-    const targetEmail = 'jeffhovingaphotos@gail.com';
+    const targetEmail = 'jeffhovingaphotos@gmail.com';
     const isCorrectRecipient = emailData.to.some(recipient => 
       recipient.toLowerCase().includes(targetEmail.toLowerCase())
     );
@@ -103,6 +103,6 @@ export async function GET() {
   return NextResponse.json({
     message: 'Email webhook endpoint is running',
     supportedMethods: ['POST'],
-    targetEmail: 'jeffhovingaphotos@gail.com'
+    targetEmail: 'jeffhovingaphotos@gmail.com'
   });
 }
