@@ -219,3 +219,34 @@ export async function deleteComment(commentId: string): Promise<void> {
     throw new Error('Failed to delete comment');
   }
 }
+
+// Create a new photo (used by email handler)
+export async function createPhoto(data: {
+  title: string;
+  slug: string;
+  caption: string;
+  photo: { url: string; imgix_url: string };
+  email_source?: string;
+  featured?: boolean;
+}): Promise<Photo> {
+  try {
+    const response = await cosmic.objects.insertOne({
+      type: 'photos',
+      title: data.title,
+      slug: data.slug,
+      status: 'published',
+      metadata: {
+        caption: data.caption,
+        photo: data.photo,
+        upload_date: new Date().toISOString().split('T')[0],
+        featured: data.featured || false,
+        email_source: data.email_source || ''
+      }
+    });
+    
+    return response.object as Photo;
+  } catch (error) {
+    console.error('Error creating photo:', error);
+    throw new Error('Failed to create photo');
+  }
+}
